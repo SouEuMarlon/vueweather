@@ -1,15 +1,20 @@
 <template>
   <main class="main_section">
     <div class="main_section-container">
-      <h2 class="main_section-celsius">16°&nbsp;</h2>
+      <h2 class="main_section-celsius">{{ celsius }}°&nbsp;</h2>
       <div class="main-section-content">
         <p class="main_section-content_location">
           Belo Horizonte <img src="../../src/assets/Sun.svg" alt="" />
         </p>
         <p class="main_section-content_date">
-          <span class="main_section-content_date-hour">11:11&nbsp;</span> -
+          <span class="main_section-content_date-hour"
+            >{{ new Date().toLocaleTimeString() }}&nbsp;</span
+          >
+          -
           <span class="main_section-content_date-day"
-            >&nbsp;Monday, 27/06/22
+            >&nbsp;{{
+              new Date().toLocaleDateString("en-US", { weekday: "long" })
+            }}, {{ new Date().toLocaleDateString() }}
           </span>
         </p>
       </div>
@@ -18,7 +23,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      celsius: 15,
+    };
+  },
+  methods: {},
+};
 </script>
 
 <style scoped>
@@ -38,7 +50,7 @@ export default {};
 }
 
 .main_section-content_date {
-  @apply text-2xl text-white;
+  @apply text-lg text-white;
 }
 
 .main_section-content_location {
@@ -47,16 +59,16 @@ export default {};
 .main_section-content_location img {
   @apply w-9;
 }
-/*
+
 @media (min-width: 769px) and (max-width: 1280px) {
   .main_section {
+    @apply bg-bottom;
   }
 
   .main_section-container {
-    @apply pl-5 pb-40;
+    @apply pl-5 pb-10;
   }
 }
-*/
 @media screen and (max-width: 768px) {
   .main_section {
     @apply w-full flex flex-col justify-end bg-bottom;
@@ -79,6 +91,24 @@ export default {};
 
   .main_section-content_date {
     @apply text-base text-white;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main_section-celsius {
+    @apply text-5xl text-white;
+  }
+
+  .main_section-content_location {
+    @apply text-lg text-white font-medium;
+  }
+
+  .main_section-content_location img {
+    @apply w-6;
+  }
+
+  .main_section-content_date {
+    @apply text-sm text-white;
   }
 }
 </style>

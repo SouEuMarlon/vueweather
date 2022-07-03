@@ -28,15 +28,26 @@ a {
   @apply text-white text-sm font-medium underline;
 }
 
-@media (min-width: 769px) and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .footer {
-    @apply pb-14 pt-10 pr-5 pl-5;
+    @apply pb-6 pt-10 pr-5 pl-5;
   }
 }
 
 @media screen and (max-width: 768px) {
   .footer {
     @apply pt-16;
+  }
+  p {
+    @apply text-lg;
+  }
+  a {
+    @apply text-lg;
+  }
+}
+@media screen and (max-width: 480px) {
+  .footer {
+    @apply pt-10;
   }
   p {
     @apply text-lg;

@@ -20,6 +20,9 @@ import SearchInput from "./input/SearchInput.vue";
 import WeatherInfo from "./WeatherInfo.vue";
 import Footer from "./footer/Footer.vue";
 export default {
+  data() {
+    return {};
+  },
   components: {
     SearchButtonVue,
     SearchInput,
@@ -31,14 +34,12 @@ export default {
 
 <style scoped>
 .sideContainer {
-  background: radial-gradient(
+  /*background: radial-gradient(
     97.57% 210.75% at 0.9% 2.98%,
     rgba(255, 255, 255, 0.4) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  backdrop-filter: blur(25px);
-
-  /*padding-bottom: 180px;*/
+  backdrop-filter: blur(25px);*/
 
   @apply flex flex-col w-full pt-32;
 }
@@ -58,15 +59,18 @@ export default {
   @apply ml-14;
 }
 
-@media (min-width: 769px) and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
   .sideContainer {
-    padding-bottom: 0px;
-    @apply pt-20;
+    @apply pt-14 w-full pb-0 px-3;
+  }
+
+  .searchContainer {
+    @apply mx-auto;
   }
 
   .separator {
     content: "_";
-    @apply mt-14 mr-10 ml-10 bg-white w-10/12 h-px block;
+    @apply mt-14 mx-auto bg-white w-10/12 h-px block;
   }
 }
 
@@ -91,7 +95,7 @@ export default {
 
 @media screen and (max-width: 480px) {
   .sideContainer {
-    @apply flex flex-col items-center justify-center pt-0 pb-10 w-full;
+    @apply flex flex-col items-center justify-center pt-0 pb-0 w-full;
   }
 
   .separator {

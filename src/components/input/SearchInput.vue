@@ -8,7 +8,13 @@ export default {};
 
 <style scoped>
 input {
-  @apply w-4/6 h-inputDeskHeight rounded-lg px-2 outline-none;
+  @apply w-4/6 rounded-lg px-2 outline-none;
+}
+
+@media screen and (max-width: 1280px) {
+  input {
+    @apply w-4/6 py-3 rounded-lg px-4 outline-none;
+  }
 }
 
 @media screen and (max-width: 768px) {

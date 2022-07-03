@@ -27,7 +27,7 @@ export default {};
   @apply ml-10 px-5 w-5/6;
 }
 .info-title {
-  @apply font-bold text-white text-xl mb-11;
+  @apply font-bold text-white text-xl mb-11 underline;
 }
 .info-cloudy,
 .info-humidity,
@@ -46,7 +46,7 @@ export default {};
 
 @media (min-width: 769px) and (max-width: 1280px) {
   .info-content {
-    @apply mt-12 px-5 w-5/6;
+    @apply mt-12 mx-auto px-5 w-5/6;
   }
 }
 
@@ -56,6 +56,9 @@ export default {};
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
+  .info-content {
+    @apply mt-12 mx-auto px-5 w-full;
+  }
 }
 </style>
