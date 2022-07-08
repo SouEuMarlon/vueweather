@@ -19,9 +19,8 @@
   @apply flex items-center pl-5 h-14
 }
 
-.logo{
-  color: #fff;
-  @apply text-xl font-bold
+.logo{  
+  @apply text-xl font-bold text-white
 }
 
 .logo-green{

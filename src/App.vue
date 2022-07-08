@@ -2,8 +2,21 @@
   <div>
     <Header />
     <div class="containerApp">
-      <MainSection />
-      <SideSection />
+      <main class="main_section -bgCloud">
+        <MainSection
+          :temp="temp"
+          :cityName="city"
+          :icon="icon"
+          :cloudy="cloudy"
+        />
+      </main>
+      <SideSection
+        :cloudy="cloudy"
+        :humidity="humidity"
+        :wind="wind"
+        :city="city"
+        @search="getWeather"
+      />
     </div>
   </div>
 </template>
@@ -12,12 +25,51 @@
 import Header from "./components/Header.vue";
 import MainSection from "./components/MainSection.vue";
 import SideSection from "./components/SideSection.vue";
+import axios from "axios";
+
 export default {
+  data() {
+    return {
+      baseUrl: "https://api.openweathermap.org/data/2.5/weather?q=",
+      apiKey: "0bf722aadf8fd079f1b903b584477e06",
+      temp: null,
+      city: "",
+      cityName: "",
+      icon: "",
+      cloudy: "",
+      humidity: null,
+      wind: null,
+    };
+  },
+
   components: {
     Header,
     MainSection,
     SideSection,
   },
+  methods: {
+    getWeather(input) {
+      axios
+        .get(`${this.baseUrl}${input}&appid=${this.apiKey}&units=metric`)
+        .then((res) => {
+          const response = res.data;
+          this.temp = Math.round(response.main.temp);
+          this.city = response.name;
+          this.cityName = response.name;
+          this.icon = `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`;
+          this.cloudy = response.weather[0].main;
+          this.humidity = response.main.humidity;
+          this.wind = response.wind.speed;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+
+  // created() {
+  //   this.getWeather();
+  // },
 };
 </script>
 
@@ -34,7 +86,28 @@ body {
 }
 
 .containerApp {
-  @apply w-full h-full flex;
+  height: calc(100vh - 56px);
+  @apply w-screen flex;
+}
+
+.main_section {
+  @apply flex flex-col justify-end w-9/12 bg-no-repeat bg-cover bg-center;
+}
+
+.-bgDefault {
+  background-image: url("../src/assets/summer_bg.png");
+}
+.-bgSun {
+  background-image: url("../src/assets/summer_bg.png");
+}
+.-bgRain {
+  background-image: url("../src/assets/rain_bg.png");
+}
+.-bgSnow {
+  background-image: url("../src/assets/snow_bg.png");
+}
+.-bgCloud {
+  background-image: url("../src/assets/cloud_bg.png");
 }
 
 @media screen and (max-width: 768px) {

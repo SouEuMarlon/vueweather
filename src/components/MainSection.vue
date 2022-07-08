@@ -1,10 +1,12 @@
 <template>
-  <main class="main_section">
-    <div class="main_section-container">
-      <h2 class="main_section-celsius">{{ celsius }}°&nbsp;</h2>
+  <!-- <main class="main_section -bgCloud">
+  </main> -->
+  <div class="main_section-container">
+    <div class="main_section-wrapper" v-if="cityName !== ''">
+      <h2 class="main_section-temp">{{ temp }}°&nbsp;</h2>
       <div class="main-section-content">
         <p class="main_section-content_location">
-          Belo Horizonte <img src="../../src/assets/Sun.svg" alt="" />
+          {{ cityName }} <img :src="icon" alt="" />
         </p>
         <p class="main_section-content_date">
           <span class="main_section-content_date-hour"
@@ -19,29 +21,61 @@
         </p>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
 export default {
+  props: {
+    temp: {
+      type: Number,
+      default: null,
+    },
+    cityName: {
+      type: String,
+      default: "",
+    },
+    icon: {
+      type: String,
+      default: "",
+    },
+  },
   data() {
-    return {
-      celsius: 15,
-    };
+    return {};
   },
   methods: {},
 };
 </script>
 
 <style scoped>
-.main_section {
-  background-image: url("../src/assets/Summer_bg.png");
+/*.main_section {
   @apply flex flex-col justify-end w-9/12 bg-no-repeat bg-cover bg-center;
 }
+
+.-bgDefault {
+  background-image: url("../src/assets/summer_bg.png");
+}
+.-bgSun {
+  background-image: url("../src/assets/summer_bg.png");
+}
+.-bgRain {
+  background-image: url("../src/assets/rain_bg.png");
+}
+.-bgSnow {
+  background-image: url("../src/assets/snow_bg.png");
+}
+.-bgCloud {
+  background-image: url("../src/assets/cloud_bg.png");
+}
+*/
+
 .main_section-container {
   @apply flex pl-20 pb-20;
 }
-.main_section-celsius {
+.main_section-wrapper {
+  @apply flex;
+}
+.main_section-temp {
   @apply text-7xl text-white;
 }
 
@@ -77,7 +111,7 @@ export default {
     @apply flex items-end pl-10 pb-4 h-80;
   }
 
-  .main_section-celsius {
+  .main_section-temp {
     @apply text-6xl text-white;
   }
 
@@ -95,7 +129,7 @@ export default {
 }
 
 @media screen and (max-width: 480px) {
-  .main_section-celsius {
+  .main_section-temp {
     @apply text-5xl text-white;
   }
 

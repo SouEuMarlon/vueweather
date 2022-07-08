@@ -47,13 +47,13 @@ a {
 }
 @media screen and (max-width: 480px) {
   .footer {
-    @apply pt-10;
+    @apply pt-8;
   }
   p {
-    @apply text-lg;
+    @apply text-base;
   }
   a {
-    @apply text-lg;
+    @apply text-base;
   }
 }
 </style>
