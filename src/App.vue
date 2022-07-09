@@ -73,20 +73,6 @@ export default {
       cloudy: "",
       humidity: null,
       wind: null,
-      // sunInfo: "Clear",
-      // snowInfo: "Snow",
-      // rainInfo: ["Drizzle", "Rain", "Thunderstorm"],
-      // cloudInfo: [
-      //   "Mist",
-      //   "Smoke",
-      //   "Haze",
-      //   "Dust",
-      //   "Fog",
-      //   "Sand",
-      //   "Ash",
-      //   "Squall",
-      //   "Tornado",
-      // ],
     };
   },
 
@@ -139,19 +125,19 @@ body {
 }
 
 .-bgDefault {
-  background-image: url("../src/assets/summer_bg.png");
+  background-image: url("./src/assets/summer_bg.png");
 }
 .-bgSun {
-  background-image: url("../src/assets/summer_bg.png");
+  background-image: url("./src/assets/summer_bg.png");
 }
 .-bgRain {
-  background-image: url("../src/assets/rain_bg.png");
+  background-image: url("./src/assets/rain_bg.png");
 }
 .-bgSnow {
-  background-image: url("../src/assets/snow_bg.png");
+  background-image: url("./src/assets/snow_bg.png");
 }
 .-bgCloud {
-  background-image: url("../src/assets/cloud_bg.png");
+  background-image: url("./src/assets/cloud_bg.png");
 }
 
 @media screen and (max-width: 768px) {
