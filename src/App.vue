@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="containerApp">
-      <main class="main_section -bgCloud">
+      <main :class="classBg">
         <MainSection
           :temp="temp"
           :cityName="city"
@@ -28,6 +28,40 @@ import SideSection from "./components/SideSection.vue";
 import axios from "axios";
 
 export default {
+  computed: {
+    classBg() {
+      const sunInfo = "Clear";
+      const snowInfo = "Snow";
+      const rainInfo = ["Drizzle", "Rain", "Thunderstorm"];
+      const cloudInfo = [
+        "Mist",
+        "Smoke",
+        "Haze",
+        "Dust",
+        "Fog",
+        "Sand",
+        "Ash",
+        "Squall",
+        "Tornado",
+      ];
+      if (this.cloudy === "") {
+        return "main_section -bgDefault";
+      }
+      if (this.cloudy.includes(sunInfo)) {
+        return "main_section -bgSun";
+      }
+      if (this.cloudy.includes(snowInfo)) {
+        return "main_section -bgSnow";
+      }
+      if (rainInfo.includes(this.cloudy)) {
+        return "main_section -bgRain";
+      }
+      if (cloudInfo.includes(this.cloudy)) {
+        return "main_section -bgCloud";
+      }
+    },
+  },
+
   data() {
     return {
       baseUrl: "https://api.openweathermap.org/data/2.5/weather?q=",
@@ -39,6 +73,20 @@ export default {
       cloudy: "",
       humidity: null,
       wind: null,
+      // sunInfo: "Clear",
+      // snowInfo: "Snow",
+      // rainInfo: ["Drizzle", "Rain", "Thunderstorm"],
+      // cloudInfo: [
+      //   "Mist",
+      //   "Smoke",
+      //   "Haze",
+      //   "Dust",
+      //   "Fog",
+      //   "Sand",
+      //   "Ash",
+      //   "Squall",
+      //   "Tornado",
+      // ],
     };
   },
 
@@ -66,10 +114,6 @@ export default {
         });
     },
   },
-
-  // created() {
-  //   this.getWeather();
-  // },
 };
 </script>
 
