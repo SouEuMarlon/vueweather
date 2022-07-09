@@ -126,19 +126,19 @@ body {
 }
 
 .-bgDefault {
-  background-image: url("./assets/summer_bg.png");
+  background-image: url("./assets/summer_bg.webp");
 }
 .-bgSun {
-  background-image: url("./assets/summer_bg.png");
+  background-image: url("./assets/summer_bg.webp");
 }
 .-bgRain {
-  background-image: url("./assets/rain_bg.png");
+  background-image: url("./assets/rain_bg.webp");
 }
 .-bgSnow {
-  background-image: url("./assets/snow_bg.png");
+  background-image: url("./assets/snow_bg.webp");
 }
 .-bgCloud {
-  background-image: url("./assets/cloud_bg.png");
+  background-image: url("./assets/cloud_bg.webp");
 }
 
 @media screen and (max-width: 768px) {
