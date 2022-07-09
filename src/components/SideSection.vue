@@ -132,7 +132,7 @@ export default {
   content: "_";
   margin-top: 107px;
 
-  @apply bg-white w-10/12 h-px mt-14 mx-auto w-full block;
+  @apply bg-white w-10/12 h-px mt-14 mx-auto block;
 }
 
 @media screen and (max-width: 768px) {
