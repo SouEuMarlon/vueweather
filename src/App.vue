@@ -43,6 +43,7 @@ export default {
         "Ash",
         "Squall",
         "Tornado",
+        "Clouds",
       ];
       if (this.cloudy === "") {
         return "main_section -bgDefault";
@@ -125,24 +126,27 @@ body {
 }
 
 .-bgDefault {
-  background-image: url("./src/assets/summer_bg.png");
+  background-image: url("./assets/summer_bg.png");
 }
 .-bgSun {
-  background-image: url("./src/assets/summer_bg.png");
+  background-image: url("./assets/summer_bg.png");
 }
 .-bgRain {
-  background-image: url("./src/assets/rain_bg.png");
+  background-image: url("./assets/rain_bg.png");
 }
 .-bgSnow {
-  background-image: url("./src/assets/snow_bg.png");
+  background-image: url("./assets/snow_bg.png");
 }
 .-bgCloud {
-  background-image: url("./src/assets/cloud_bg.png");
+  background-image: url("./assets/cloud_bg.png");
 }
 
 @media screen and (max-width: 768px) {
   .containerApp {
     @apply flex flex-col;
+  }
+  .main_section {
+    @apply w-full bg-bottom;
   }
 }
 </style>

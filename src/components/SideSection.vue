@@ -86,13 +86,6 @@ export default {
 
 <style scoped>
 .sideContainer {
-  /*background: radial-gradient(
-    97.57% 210.75% at 0.9% 2.98%,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  backdrop-filter: blur(25px);*/
-
   @apply flex flex-col pt-14 w-full pb-0 px-3;
 }
 

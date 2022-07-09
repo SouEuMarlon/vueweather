@@ -48,27 +48,6 @@ export default {
 </script>
 
 <style scoped>
-/*.main_section {
-  @apply flex flex-col justify-end w-9/12 bg-no-repeat bg-cover bg-center;
-}
-
-.-bgDefault {
-  background-image: url("../src/assets/summer_bg.png");
-}
-.-bgSun {
-  background-image: url("../src/assets/summer_bg.png");
-}
-.-bgRain {
-  background-image: url("../src/assets/rain_bg.png");
-}
-.-bgSnow {
-  background-image: url("../src/assets/snow_bg.png");
-}
-.-bgCloud {
-  background-image: url("../src/assets/cloud_bg.png");
-}
-*/
-
 .main_section-container {
   @apply flex pl-20 pb-20;
 }
@@ -129,6 +108,10 @@ export default {
 }
 
 @media screen and (max-width: 480px) {
+  .main_section-container {
+    @apply pl-4 pr-4 pb-10;
+  }
+
   .main_section-temp {
     @apply text-5xl text-white;
   }
