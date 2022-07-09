@@ -146,7 +146,13 @@ body {
     @apply flex flex-col;
   }
   .main_section {
-    @apply w-full bg-bottom;
+    @apply w-full bg-no-repeat bg-cover bg-bottom;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main_section {
+    @apply w-full bg-no-repeat bg-cover bg-center;
   }
 }
 </style>
