@@ -12,7 +12,7 @@
       </div>
       <div class="weatherInfo">
         <div class="info-content">
-          <h3 class="info-title">Weather Details</h3>
+          <p class="info-title">Weather Details</p>
           <div class="info-cloudy">
             <p class="cloudy-title">Cloudy:</p>
             <p class="cloudy-value" v-if="hasCloudy">{{ cloudy }}</p>
@@ -85,12 +85,11 @@ export default {
 </script>
 
 <style scoped>
-.sideContainer {
-  @apply flex flex-col pt-14 w-full pb-0 px-3;
-}
-
 .side-bg {
-  @apply bg-bgGreen;
+  @apply bg-bgGreen w-3/12;
+}
+.sideContainer {
+  @apply flex flex-col pt-14 pb-0 px-3;
 }
 
 .searchContainer {
@@ -102,7 +101,7 @@ export default {
 }
 
 .search_button {
-  @apply bg-white bg-no-repeat text-greyText text-base text-center rounded-lg ml-3 py-3 pl-5 pr-5 hover:text-bgGreen transition-all;
+  @apply bg-white bg-no-repeat text-gray-600 text-base text-center rounded-lg ml-3 py-3 pl-5 pr-5 hover:text-bgGreen transition-all;
 }
 
 /* Weather Info*/
@@ -132,12 +131,21 @@ export default {
   content: "_";
   margin-top: 107px;
 
-  @apply bg-white w-10/12 h-px mt-14 mx-auto block;
+  @apply bg-white w-11/12 h-px mt-14 mx-auto block;
+}
+
+@media screen and (max-width: 1280px) {
+  .side-bg {
+    @apply bg-bgGreen w-5/12;
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .side-bg {
+    @apply bg-bgGreen w-full;
+  }
   .sideContainer {
-    @apply flex flex-col items-center justify-around pt-0 w-full;
+    @apply flex flex-col items-center justify-around pt-0;
   }
 
   .searchContainer {
@@ -145,11 +153,11 @@ export default {
   }
 
   .search_input {
-    @apply w-96 h-inputDeskHeight rounded-lg px-2 outline-none;
+    @apply w-96 py-3 rounded-lg px-4 outline-none;
   }
 
   .search_button {
-    @apply bg-white bg-no-repeat text-greyText text-base text-center rounded-lg ml-3 py-3 pl-5 pr-5 hover:text-bgGreen transition-all;
+    @apply bg-white bg-no-repeat text-gray-600 text-base text-center rounded-lg ml-3 py-3 pl-5 pr-5 hover:text-bgGreen transition-all;
   }
 
   /* Weather Info*/
@@ -173,11 +181,11 @@ export default {
   }
 
   .search_input {
-    @apply w-56 h-inputDeskHeight rounded-lg px-2 outline-none;
+    @apply w-56 py-3 rounded-lg px-4 outline-none;
   }
 
   .search_button {
-    @apply bg-white bg-no-repeat text-greyText text-base text-center rounded-lg ml-3 py-3 pl-5 pr-5 hover:text-bgGreen transition-all;
+    @apply bg-white bg-no-repeat text-gray-600 text-base text-center rounded-lg ml-3 py-3 pl-5 pr-5 hover:text-bgGreen transition-all;
   }
 
   /* Weather Info*/
