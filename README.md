@@ -12,6 +12,11 @@ Utilizei VueJS + TailwindCSS (para estilização) e Axios (para consumo da API O
  - [TailwindCSS](https://tailwindcss.com/)
  - [Axios](https://axios-http.com/ptbr/)
  - [Open Weather (API)](https://openweathermap.org/)
+ 
+ 
+## Layout (Figma)
+
+![App Layout](https://www.figma.com/file/T9OadH4NtBugX3ogG9DluF/Vue_Weather?node-id=0%3A1)
 
 
 ## Demonstração
