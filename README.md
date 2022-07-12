@@ -16,7 +16,7 @@ Utilizei VueJS + TailwindCSS (para estilização) e Axios (para consumo da API O
  
 ## Layout (Figma)
 
-![App Layout](https://www.figma.com/file/T9OadH4NtBugX3ogG9DluF/Vue_Weather?node-id=0%3A1)
+[App Layout](https://www.figma.com/file/T9OadH4NtBugX3ogG9DluF/Vue_Weather?node-id=0%3A1)
 
 
 ## Demonstração
