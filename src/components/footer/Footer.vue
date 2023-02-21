@@ -3,7 +3,7 @@
     <p>
       Design and developed by
       <a
-        href="https://github.com/marlonmnz"
+        href="https://github.com/SouEuMarlon"
         target="_blank"
         rel="noopener noreferrer"
         >Marlon Menezes</a
